@@ -1,4 +1,4 @@
-import app from "./init";
+const app = require("./init");
 
 const merchants = new Map();
 
@@ -11,9 +11,11 @@ app.post("/merchants/new", async (req, res) => {
 });
 
 app.get("/merchants", async (req, res) => {
+  // Make an API Call to the Python API
   res.send(mapToJson(merchants));
 });
 
+// Must fetch data from Yelp API
 app.get("/merchants/search", async (req, res) => {
   const { query } = req.query;
   res.send(200);

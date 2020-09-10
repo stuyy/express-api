@@ -1,5 +1,5 @@
-import { config } from "dotenv";
-import express from "express";
+const { config } = require("dotenv");
+const express = require("express");
 
 const app = express();
 
@@ -12,4 +12,4 @@ app.use(express.urlencoded({ extended: false }));
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`));
 
-export default app;
+module.exports = app;
